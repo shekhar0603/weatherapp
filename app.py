@@ -19,7 +19,8 @@ def weatherapp():
     
     response = requests.get(url,params=params)
     data = response.json()
-    return f"data: {data} , city : {request.form.get('city')}"
+    city = data['name']
+    return f"data: {data} , city : {city}"
 
 
 if __name__ == "__main__":
